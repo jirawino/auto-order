@@ -6,15 +6,15 @@ import re
 s = requests.Session()
 
 def loginPage():
-    url = "https://member.lazada.co.id/user/login"
+    url = "https://member.lazada.co.th/user/login"
     
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-encoding': 'gzip, deflate, br',
         'accept-language': 'en-US,en;q=0.9',
         'content-type': 'application/json',
-        'origin': 'https://member.lazada.co.id',
-        'referer': 'https://member.lazada.co.id/user/login',
+        'origin': 'https://member.lazada.co.th',
+        'referer': 'https://member.lazada.co.th/user/login',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
         'x-requested-with': 'XMLHttpRequest'
     }
@@ -29,15 +29,15 @@ def loginPage():
         raise Exception("CSRF token not found")
 
 def login(token):
-    url = "https://member.lazada.co.id/user/api/login"
+    url = "https://member.lazada.co.th/user/api/login"
     
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-encoding': 'gzip, deflate, br',
         'accept-language': 'en-US,en;q=0.9',
         'content-type': 'application/json',
-        'origin': 'https://member.lazada.co.id',
-        'referer': 'https://member.lazada.co.id/user/login',
+        'origin': 'https://member.lazada.co.th',
+        'referer': 'https://member.lazada.co.th/user/login',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
         'x-requested-with': 'XMLHttpRequest',
         'x-csrf-token': token['token']
@@ -54,15 +54,15 @@ def login(token):
         raise Exception("Login failed")
 
 def visitProd(token):
-    url = "https://www.lazada.co.id/-i174951351-s207287470.html?spm=a2o4j.order_details.details_title..3b896664srxzbW&urlFlag=true&mp=1"
+    url = "https://www.lazada.co.th/-i174951351-s207287470.html?spm=a2o4j.order_details.details_title..3b896664srxzbW&urlFlag=true&mp=1"
     
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-encoding': 'gzip, deflate, br',
         'accept-language': 'en-US,en;q=0.9',
         'content-type': 'application/json',
-        'origin': 'https://member.lazada.co.id',
-        'referer': 'https://member.lazada.co.id/user/login',
+        'origin': 'https://member.lazada.co.th',
+        'referer': 'https://member.lazada.co.th/user/login',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
         'x-requested-with': 'XMLHttpRequest'
     }
@@ -77,15 +77,15 @@ def visitProd(token):
         raise Exception("CSRF token not found on product page")
 
 def addCart(token):
-    url = "https://cart.lazada.co.id/cart/api/add"
+    url = "https://cart.lazada.co.th/cart/api/add"
     
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-encoding': 'gzip, deflate, br',
         'accept-language': 'en-US,en;q=0.9',
         'content-type': 'application/json',
-        'origin': 'https://member.lazada.co.id',
-        'referer': 'https://member.lazada.co.id/user/login',
+        'origin': 'https://member.lazada.co.th',
+        'referer': 'https://member.lazada.co.th/user/login',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',
         'x-requested-with': 'XMLHttpRequest',
         'x-csrf-token': token['token']
